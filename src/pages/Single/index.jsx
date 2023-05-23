@@ -91,7 +91,7 @@ export default function Single() {
             </div>}
 
         </div>
-        <Descriptions bordered style={{ textAlign: 'center' }}>
+        <Descriptions bordered style={{ textAlign: 'center'}}>
           <Descriptions.Item label="发布者" style={{ textAlign: 'center' }}>{post.username}</Descriptions.Item>
           <Descriptions.Item label="电子邮箱" style={{ textAlign: 'center' }}>{post.email}</Descriptions.Item>
           <Descriptions.Item label="文章类别" style={{ textAlign: 'center' }}>{post.cat}</Descriptions.Item>

@@ -1,5 +1,98 @@
 @lightGreen: #b9e7e7;
 
+@media (min-width: 1024px) {
+
+    /* 在宽度大于等于 1024px 时应用的样式 */
+    /* 示例：调整字体大小和布局 */
+    body {
+        font-size: 18px;
+    }
+
+    #root {
+        .container {
+            width: 80%
+        }
+    }
+    .home {
+        margin-top: 50px;
+        .posts{
+            .post{
+                gap: 50px;
+                .img{
+                    flex: 2 0 0;
+                }
+               
+            }
+        }
+    }
+    .single{
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* 在宽度介于 768px 和 1023px 之间时应用的样式 */
+    /* 示例：调整字体大小和布局 */
+    body {
+        font-size: 16px;
+    }
+
+    #root {
+        .container {
+            width: 80%;
+        }
+    }
+    .home {
+        margin-top: 100px;
+        .posts{
+            .post{
+                gap: 100px;
+                .img{
+                    flex: 6 0 0;
+                }
+               
+            }
+        }
+    }
+    .single{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* 在宽度小于等于 767px 时应用的样式 */
+    /* 示例：调整字体大小和布局 */
+    body {
+        font-size: 14px;
+    }
+
+    #root {
+        .container {
+            width: 80%;
+        }
+    }
+    .home {
+        margin-top: 160px;
+        .posts{
+            .post{
+                gap: 50px;
+                .img{
+                    flex: 8 0 0;
+                }
+               
+            }
+        }
+    }
+    .single{
+        margin-top: 160px;
+        .menuBox{
+            display: none;
+        }
+    }
+}
+
 /* 清除内外边距 */
 body,
 h1,
@@ -39,8 +132,8 @@ a {
     position: relative;
 
     .container {
-        width: 1024px;
-        // width: 80%;
+        // width: 1024px;
+        // width: 70%;
 
         //AUTH
         .auth {
@@ -102,7 +195,7 @@ a {
         //NAVBAR
         .navBar {
             height: 50px;
-
+            width: 100%;
             .container {
                 background-color: white;
                 z-index: 999;
@@ -111,7 +204,7 @@ a {
                 padding: 10px 0px;
                 display: flex;
                 justify-content: space-between;
-
+                flex-wrap: wrap;
                 .logo {
                     img {
                         height: 70px;
@@ -121,17 +214,16 @@ a {
                 .links {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
-
+                    gap:10px;
+                    flex-wrap: wrap;
+                    // justify-content: space-evenly;
                     h6 {
                         font-size: 16px;
                         font-weight: 300;
                     }
-
                     span {
                         cursor: pointer;
                     }
-
                     .write {
                         background-color: @lightGreen ;
                         width: 50px;
@@ -159,8 +251,8 @@ a {
             background-color: #b9e7e6;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-
+            justify-content: space-evenly;
+            flex-wrap: wrap;
             .heart {
                 color: red;
             }
@@ -172,8 +264,9 @@ a {
 
         //HOME
         .home {
-            margin-top: 50px;
+            // margin-top: 50px;
             width: 100%;
+
             .posts {
 
                 display: flex;
@@ -185,16 +278,17 @@ a {
                 .post {
                     width: 100%;
                     display: flex;
-                    gap: 100px;
+                    // gap: 50px;
 
                     &:nth-child(2n+1) {
                         flex-direction: row-reverse;
                     }
 
                     .img {
-                        flex: 2 0 0;
+                        // flex: 2 0 0;
                         position: relative;
                         max-height: 250px;
+
                         // min-width: 30%;
                         &::after {
                             content: '';
@@ -206,11 +300,13 @@ a {
                             left: -20px;
                             z-index: -1;
                         }
-                        a{
+
+                        a {
                             display: inline-block;
                             width: 100%;
                             height: 100%;
                         }
+
                         img {
                             box-sizing: border-box;
                             border: 1px solid lightblue;
@@ -229,6 +325,7 @@ a {
                         gap: 20px;
                         justify-content: space-between;
                         overflow: hidden;
+
                         h1 {
                             font-size: 22px;
                             display: -webkit-box;
@@ -287,15 +384,16 @@ a {
         //SINGLE
         .single {
             display: flex;
-            margin-top: 50px;
+            // margin-top: 50px;
             gap: 50px;
-
+            flex-wrap: wrap;
+            width: 100%;
             .content {
                 flex: 8;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-
+                width: 100%;
                 .pic {
                     // margin: 0 auto;
                     width: 100%;
@@ -308,7 +406,6 @@ a {
                     align-items: center;
                     gap: 10px;
                     font-size: 14px;
-
                     img {
                         width: 50px;
                         height: 50px;
@@ -334,10 +431,11 @@ a {
 
                 .blog {
                     border: 1px solid gray;
+                    box-sizing: border-box;
                     padding: 10px;
-
+                    overflow: hidden;
+                    width: 100%;
                     p {
-
                         //两端文本对齐
                         text-align: justify;
                         line-height: 30px;
@@ -359,6 +457,7 @@ a {
             // }
             .menuBox {
                 flex: 2;
+
                 // border: 1px solid lightgray;
                 // position: relative;
                 .menu {
@@ -369,17 +468,19 @@ a {
                     gap: 25px;
                     align-items: center;
                     padding: 10px 0;
+
                     // position: fixed;
                     h1 {
                         color: #555;
                         font-size: 20px;
                     }
+
                     .post {
                         display: flex;
                         padding: 10px;
                         flex-direction: column;
                         gap: 10px;
-                      
+
 
                         img {
                             width: 100%;
@@ -389,7 +490,7 @@ a {
 
 
 
-                        
+
                     }
 
                 }
