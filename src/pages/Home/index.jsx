@@ -48,7 +48,8 @@ export default function Home() {
       title: {
         text: '已发布的文章',
         subtext: '文章分类',
-        left: 'center'
+        bottom : 'bottom',
+        left:"center"
       },
       //hover分类效果
       tooltip: {
@@ -140,9 +141,9 @@ export default function Home() {
           onClose={onClose}
           open={open}
           key='right'
-          width='45%'
+          width='50%'
         >
-          <div ref={picRef} style={{ height: '80%', width: '100%' }}></div>
+          <div ref={picRef} style={{ height: '60%', width: '100%' }}></div>
         </Drawer>
 
         {posts.map(post => (
