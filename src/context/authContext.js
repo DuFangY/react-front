@@ -1,5 +1,6 @@
 import { useState,createContext, useEffect } from "react";
 import axios from "axios";
+import { message} from 'antd'
 //子组件 作为props.children传入
 export const AuthContext = createContext()
 export const AuthContextProvider = ({children})=>{
@@ -16,10 +17,11 @@ export const AuthContextProvider = ({children})=>{
         
     }
     const logout = async () =>{
-        axios.post("/auth/logout").then(()=>{
+        axios.post("/auth/logout").then(()=>{    
+            document.cookie = "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             setCurrentUser(null)
         }).catch(error=>{
-            console.log(error)
+            message.error(error)
         })
         
     }
