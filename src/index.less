@@ -25,6 +25,16 @@
             }
         }
     }
+    .navBar{
+        .container{
+            .logo{
+                flex:1;
+            }
+            .links{
+                flex:3;
+            }
+        }
+    }
     .single{
         margin-top: 50px;
     }
@@ -47,7 +57,7 @@
         }
     }
     .home {
-        margin-top: 100px;
+        margin-top: 50px;
         .posts{
             .post{
                 gap: 100px;
@@ -58,11 +68,21 @@
             }
         }
     }
+    .navBar{
+        .container{
+            .logo{
+                flex:1;
+            }
+            .links{
+                flex:3;
+            }
+        }
+    }
     .single{
-        margin-top: 100px;
+        margin-top: 50px;
     }
     .add{
-        margin-top: 100px;
+        margin-top: 50px;
     }
 }
 
@@ -80,7 +100,7 @@
         }
     }
     .home {
-        margin-top: 160px;
+        margin-top: 110px;
         .posts{
             .post{
                 gap: 50px;
@@ -92,13 +112,25 @@
         }
     }
     .single{
-        margin-top: 160px;
+        margin-top: 110px;
         .menuBox{
             display: none;
         }
     }
     .add{
-        margin-top: 160px;
+        margin-top: 110px;
+    }
+}
+@media (max-width: 450px)
+{
+    .home {
+        margin-top: 135px;
+    }
+    .single{
+        margin-top: 150px;
+    }
+    .add{
+        margin-top: 135px;
     }
 }
 
@@ -212,7 +244,7 @@ a {
                 top: 0;
                 padding: 10px 0px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 flex-wrap: wrap;
                 .logo {
                     img {
@@ -225,7 +257,7 @@ a {
                     align-items: center;
                     gap:10px;
                     flex-wrap: wrap;
-                    // justify-content: space-evenly;
+                    justify-content: space-evenly;
                     h6 {
                         font-size: 16px;
                         font-weight: 300;
@@ -235,8 +267,8 @@ a {
                     }
                     .write {
                         background-color: @lightGreen ;
-                        width: 50px;
-                        height: 50px;
+                        width: 40px;
+                        height: 40px;
                         border-radius: 50%;
                         display: flex;
                         align-items: center;
