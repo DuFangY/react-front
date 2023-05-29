@@ -2,6 +2,7 @@ import React,{useState,useRef,useContext} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../../context/authContext'
+import Background from '../../components/Background/Background';
 export default function Login() {
   const [error,setError] = useState(null)
   const refForm = useRef()
@@ -27,7 +28,9 @@ export default function Login() {
     })
   }
   return (
-    <div className='auth'>
+    <div>
+      <Background/>
+      <div className='auth'>
       <h1>Login</h1>
       <form ref={refForm}>
         <input type="text" placeholder='username'/>
@@ -37,5 +40,7 @@ export default function Login() {
         <span>还没有账号? <Link to="/xupt">Register</Link></span>
       </form>
     </div>
+    </div>
+    
   )
 }

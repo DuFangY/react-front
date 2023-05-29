@@ -10,7 +10,7 @@
 
     #root {
         .container {
-            width: 80%
+            width: 70%
         }
     }
     .home {
@@ -37,6 +37,11 @@
     }
     .single{
         margin-top: 50px;
+        .content{
+            .blog{
+                padding: 30px
+            }
+        }
     }
     .add{
         margin-top: 70px;
@@ -53,11 +58,11 @@
 
     #root {
         .container {
-            width: 80%;
+            width: 70%;
         }
     }
     .home {
-        margin-top: 50px;
+        margin-top: 70px;
         .posts{
             .post{
                 gap: 100px;
@@ -79,13 +84,17 @@
         }
     }
     .single{
-        margin-top: 50px;
+        margin-top: 80px;
+        .content{
+            .blog{
+                padding: 30px
+            }
+        }
     }
     .add{
-        margin-top: 70px;
+        margin-top: 90px;
     }
 }
-
 @media (max-width: 767px) {
 
     /* 在宽度小于等于 767px 时应用的样式 */
@@ -112,22 +121,43 @@
         }
     }
     .single{
-        margin-top: 110px;
+        margin-top: 130px;
         .menuBox{
             display: none;
+        }
+        .content{
+            .blog{
+                padding: 30px
+            }
         }
     }
     .add{
         margin-top: 130px;
     }
 }
-@media (max-width: 450px)
-{
+@media (max-width: 460px){
     .home {
-        margin-top: 135px;
+        margin-top: 150px;
     }
     .single{
+        margin-top: 160px;
+        .content{
+            .blog{
+                padding: 15px
+            }
+        }
+    }
+    .add{
+        margin-top: 180px;
+    }
+}
+@media (max-width: 400px)
+{
+    .home {
         margin-top: 150px;
+    }
+    .single{
+        margin-top: 180px;
     }
     .add{
         margin-top: 180px;
@@ -167,15 +197,13 @@ a {
     color: inherit;
 }
 
+
 #root {
+   
     display: flex;
     justify-content: center;
     position: relative;
-
     .container {
-        // width: 1024px;
-        // width: 70%;
-
         //AUTH
         .auth {
             display: flex;
@@ -186,8 +214,7 @@ a {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: @lightGreen;
-
+            z-index: 9999;
             h1 {
                 font-size: 20px;
                 color: teal;
@@ -239,7 +266,6 @@ a {
             width: 100%;
             .container {
                 background-color: white;
-                z-index: 999;
                 position: fixed;
                 top: 0;
                 padding: 10px 0px;
@@ -424,17 +450,16 @@ a {
 
         //SINGLE
         .single {
+            // color: white;
             display: flex;
-            // margin-top: 50px;
             gap: 50px;
-            flex-wrap: wrap;
-            width: 100%;
+            // width: 100%;
             .content {
-                flex: 8;
+                flex: 10;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                width: 100%;
+                // width: 100%;
                 .pic {
                     // margin: 0 auto;
                     width: 100%;
@@ -473,7 +498,7 @@ a {
                 .blog {
                     border: 1px solid gray;
                     box-sizing: border-box;
-                    padding: 10px;
+                    // padding: 10px;
                     overflow: hidden;
                     width: 100%;
                     p {
@@ -497,43 +522,58 @@ a {
             //     flex:5;
             // }
             .menuBox {
-                flex: 2;
-
-                // border: 1px solid lightgray;
-                // position: relative;
+                flex: 4;
+                height: 100%;
                 .menu {
-                    // left: 0;
-                    // top:0;
+                    width: 100%;
+                    height: 100%;
                     display: flex;
                     flex-direction: column;
                     gap: 25px;
                     align-items: center;
                     padding: 10px 0;
-
-                    // position: fixed;
                     h1 {
                         color: #555;
                         font-size: 20px;
                     }
 
                     .post {
+                        width: 100%;
                         display: flex;
-                        padding: 10px;
-                        flex-direction: column;
-                        gap: 10px;
-
-
+                        a{
+                            flex:1;
+                            display: flex;
+                            .ant-card{
+                                display: block;
+                                margin: 0 auto;
+                            }
+                        }
                         img {
                             width: 100%;
-                            height: 200px;
+                            max-height: 200px;
                             object-fit: fill;
                         }
-
-
-
-
                     }
 
+                }
+                .slideInfo{
+                    margin-top: 20px;
+                    .ant-card-head{
+                        background: linear-gradient(rgb(234, 232, 232),rgb(195, 195, 195));
+                    }
+                    .recommendBox{
+                        display: flex;
+                        justify-content: space-evenly;
+                        .recommend{
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            gap: 10px;
+                            align-items: center;
+                        }
+                    }
+                    
                 }
             }
 

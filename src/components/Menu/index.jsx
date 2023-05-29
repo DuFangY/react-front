@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, forwardRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Empty } from 'antd';
 import axios from 'axios'
 import { Card } from 'antd';
 const { Meta } = Card;
-export default function Menu({ cat, postId}) {
+export default forwardRef(function Menu({ cat, postId},ref) {
     const [posts, setPosts] = useState([])
     const [relative, setRelative] = useState([])
 
@@ -17,12 +17,12 @@ export default function Menu({ cat, postId}) {
     }, [cat])
     useEffect(() => {
         let rel = posts.filter(val => val.id !== postId)
-        if(rel.length > 5)
-            rel = rel.slice(0,5)
+        if(rel.length > 2)
+            rel = rel.slice(0,2)
         setRelative([...rel])
     }, [posts, postId])
 
-    const menuRef = useRef(null)
+    // const menuRef = useRef(null)
 
     // let timer = null
     // const handleScroll = () => {
@@ -47,7 +47,7 @@ export default function Menu({ cat, postId}) {
     //     // chageMenuStyle(elWidth)
     // }, [left,top,elWidth,changeHeight,relative])
     return (
-        <div className='menu' ref={menuRef}>
+        <div className='menu' ref={ref}>
             <h1>您可能关注的文章</h1>
             {
                 relative.length !== 0 ?
@@ -60,9 +60,9 @@ export default function Menu({ cat, postId}) {
                                 <Card
                                     hoverable
                                     style={{
-                                        // width: `${elWidth}px`,
-                                        // maxWidth:"200px"
-                                        width:'240px'
+                                        width:"220px",
+                                        textAlign:"center"
+                                      
                                     }}
                                     cover={<img alt="example" src={`/upload/${post.img}`} />}
                                 >
@@ -75,4 +75,4 @@ export default function Menu({ cat, postId}) {
             }
         </div>
     )
-}
+})
